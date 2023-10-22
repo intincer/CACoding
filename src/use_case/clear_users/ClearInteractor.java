@@ -1,21 +1,24 @@
 package use_case.clear_users;
+import data_access.FileUserDataAccessObject;
+import java.util.ArrayList;
 
-// TODO Complete me
-
-import entity.User;
-
-public class CleanInteractor implements ClearInputBoundary {
-    final ClearUserDataAccessInterface userDataAccessObject;
+public class ClearInteractor implements ClearInputBoundary {
+    final ClearUserDataAccessInterface clearDataAccessObject;
     final ClearOutputBoundary clearPresenter;
 
-    public ClearInteractor(ClearUserDataAccessInterface userDataAccessInterface,
+    public ClearInteractor(ClearUserDataAccessInterface clearUserDataAccessInterface,
                            ClearOutputBoundary clearOutputBoundary) {
-        this.userDataAccessObject = userDataAccessInterface;
+        this.clearDataAccessObject = clearUserDataAccessInterface;
         this.clearPresenter = clearOutputBoundary;
     }
 
+   // public CleanInteractor() {
+   // }
+
     @Override
     public void execute(ClearInputData clearInputData) {
-        // TODO
+        ArrayList<String> users = clearInputData.getUsers();
+        clearDataAccessObject.clear();
+        clearPresenter.prepareSuccessView(clearInputData);
     }
 }

@@ -2,6 +2,7 @@ package interface_adapter.clear_users;
 
 import use_case.clear_users.ClearInputData;
 import use_case.clear_users.ClearInputBoundary;
+import java.util.ArrayList;
 
 public class ClearController {
 
@@ -11,8 +12,8 @@ public class ClearController {
         this.clearUseCaseInteractor = clearUseCaseInteractor;
     }
 
-    public void execute(String username){
-        ClearInputData clearInputData = new ClearInputData();
+    public void execute(ArrayList<String> users){
+        ClearInputData clearInputData = new ClearInputData(users);
 
         clearUseCaseInteractor.execute(clearInputData);
     }

@@ -1,13 +1,8 @@
 package use_case.clear_users;
-
+import java.util.ArrayList;
 import entity.User;
 
 public interface ClearUserDataAccessInterface {
-    boolean existsByName(String identifier);
-
     void clear();
-
-    void remove(User user);
-
-    User get(String username);
+    String getUsers(ArrayList<String> users);
 }

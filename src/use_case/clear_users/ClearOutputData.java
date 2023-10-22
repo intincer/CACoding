@@ -1,17 +1,17 @@
 package use_case.clear_users;
-
-// TODO Complete me
+import java.util.ArrayList;
 
 public class ClearOutputData {
-    private final String username;
+    private ArrayList<String> users;
     private boolean useCaseFailed;
 
-    public ClearOutputData(String username, boolean useCaseFailed) {
-        this.username = username;
+    public ClearOutputData(ArrayList<String> users, boolean useCaseFailed) {
+        this.users = users;
         this.useCaseFailed = useCaseFailed;
+
     }
 
-    public String getUsername(){
-        return username;
+    public ArrayList<String> getDeletedUsers(){
+        return users;
     }
 }

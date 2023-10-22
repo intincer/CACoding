@@ -57,10 +57,7 @@ public class FileUserDataAccessObject implements SignupUserDataAccessInterface, 
     public ArrayList<String> getUsers(Map<String, User> accounts){
         return new ArrayList<String>(accounts.keySet());
     }
-
-    public void clearUsers(Map users){
-        users.clear();
-    }
+    
     @Override
     public void clear() {
         accounts.clear();
